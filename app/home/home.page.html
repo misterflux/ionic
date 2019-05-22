@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+                              นักโทษ
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-button (click)="adddata()" color="warning" expand="full">เพิ่มนักโทษ</ion-button>
+   
+  <ion-card *ngFor = "let item of dataList"> <!--วนลูปค่าที่จะโชว์-->
+    <ion-card-content>
+      ชื่อ: {{item.n_name}} 
+      <br>
+     นามสกุล : {{item.n_last}}   <ion-button (click)="deletedata(item.n_id)" color="success" expand="full">ลบ</ion-button>
+     <ion-button (click)="editdata(item.n_id)" color="dark" expand="full">แก้ไข</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
